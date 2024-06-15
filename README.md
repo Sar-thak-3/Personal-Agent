@@ -86,9 +86,9 @@ Both approaches have distinct advantages and drawbacks based on the nature of th
 
 
 ## Fulfillment of Requirements
-- [ x ] Personal Conversation agent
-- [ x ] Organized web articles
-- [ x ] Pipeline/Architecture
-- [ x ] Cite References (Both Approaches)
-- [ x ] Conversational Memory
-- [ x ] Generate summary after series of questions
+- [x] Personal Conversation agent
+- [x] Organized web articles
+- [x] Pipeline/Architecture
+- [x] Cite References (Both Approaches)
+- [x] Conversational Memory
+- [x] Generate summary after series of questions
