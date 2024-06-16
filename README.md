@@ -2,9 +2,11 @@
 
 ## LLMS Used
 
-Here for query agent I used the LangChain LLM provided by [Gorq](https://console.groq.com/). This LLM enables conversational capabilities by maintaining chat history and offering features like managing conversational history and more.
+Here for the query agent, I used the LangChain LLM provided by [Gorq](https://console.groq.com/). This LLM enables conversational capabilities by maintaining chat history and offering features like managing conversational history and more.
 
-This is like a custom LLMs for particular use cases in which data is provided by the user and required answers from that data.
+This is like a custom LLM for particular use cases in which data is provided by the user and required answers from that data.
+
+<I>**I used this basic LLM model of LangChain because I used it earlier sometime, of course, it does not have capabilities like the recent LLMs like Gemini, ChatGPT, and Llama. Using my approach for creating personal agents can produce excellent results with these new models. I just focussed best approach on how to make the best results rather than choosing the best LLM model, as the problem statement states to solve the issue with the best approach, not the best model.**</I>
 
 ## Raw Data Organization
 
@@ -14,7 +16,7 @@ I have designed this project to handle a variety of web URLs and README files, e
 2. **HTML Content Extraction**: Using tools like BeautifulSoup, the project extracts text, tables, and URLs embedded within HTML pages. This content is organized into structured data types such as paragraphs, tables, and lists.
 
 3. **Preprocessing**:
-Text can be processed but LangChain have 8b tokens and designed to execute the different characters, hence there is not much necessity of processing the textual data, other than some major preprocessings.
+Text can be processed but LangChain has 8b tokens and is designed to execute the different characters, hence there is not much necessity of processing the textual data, other than some major preprocessing.
 
 4. **Organized Data Structure**: After extraction and preprocessing, data is structured into:
    - **Paragraphs**: Sequential blocks of text, ensuring readability and logical flow.
@@ -30,7 +32,7 @@ Text can be processed but LangChain have 8b tokens and designed to execute the d
 To generalize the use of URLs for this personal query agent, I've implemented a BeautifulSoup function. It processes HTML content, capturing text between `<h>` tags as paragraphs. Each paragraph is represented as a map structured as follows:
 - The script fetches HTML content from a specified URL (`url`).
 - BeautifulSoup parses the HTML, identifying headings (`<h1>` to `<h6>`).
-- It extracts text content between headings as paragraphs, capturing relevant `<a>` tags as links within each paragraph.
+- It extracts text content between headings as paragraphs, capturing relevant `<a>` tags as links within each section.
 - Each paragraph is structured into a map (`paragraph_map`) containing `title`, `content`, `page_url`, `relevant_links`, and `paragraph_number`.
 - This approach provides a clear and organized way to handle and process data extracted from various web sources.
 
@@ -62,11 +64,12 @@ In this method, data is provided batch by batch to the model based on user input
 An alternative future approach could involve using vector space models:
 - **Vector Representation**: Each paragraph is represented as a vector in a high-dimensional space.
 - **Query Comparison**: User queries are also converted into vectors.
-- **Similarity Calculation**: Compute similarity between the query vector and paragraph vectors to select the most relevant `n` paragraphs.
+- **Similarity Calculation**: Compute the similarity between the query vector and paragraph vectors to select the most relevant `n` paragraphs.
 - **Advantages**: Potentially more robust to semantic meaning rather than just textual overlap.
 - **Consideration**: Implementation complexity and computational overhead must be managed.
-
-<p style="color:orange;">This is the scaling approach for 1st method, as using vector spaces will definitely correct the data matching.</p>
+```diff
+- This is the scaling approach for 1st method, as using vector spaces will correct the data matching.
+```
 
 #### Approach 2: Full Data Feeding to LLMs
 In this approach, all extracted data is provided at once to the Language Models (LLMs) for processing:
@@ -77,12 +80,14 @@ In this approach, all extracted data is provided at once to the Language Models 
 
 ![alt text](langchain2.png)
 
-CustomGPT by OpenAI works in similar fashion by providing the entire data at once to the model, hence generate answers on basis of provided data, but have similar drawbacks.
+CustomGPT by OpenAI works similarly by providing the entire data at once to the model, hence generating answers based on provided data, but have similar drawbacks.
 
-<p style="color:orange;">The scaling approach for this method is using strong LLMs with huge tokens and more tends towards the conversational history.</p>
+```diff
+- The scaling approach for this method is using strong LLMs with huge tokens and more tends towards the conversational history.
+```
 
 ### Conclusion
-Both approaches have distinct advantages and drawbacks based on the nature of the data and requirements of the query agent. Future improvements could explore hybrid approaches or enhancements in model capabilities to handle larger datasets effectively.
+Both approaches have distinct advantages and drawbacks based on the data's nature and the query agent's requirements. Future improvements could explore hybrid approaches or enhancements in model capabilities to handle larger datasets effectively.
 
 
 ## Fulfillment of Requirements
@@ -91,4 +96,4 @@ Both approaches have distinct advantages and drawbacks based on the nature of th
 - [x] Pipeline/Architecture
 - [x] Cite References (Both Approaches)
 - [x] Conversational Memory
-- [x] Generate summary after series of questions
+- [x] Generate a summary after a series of questions
