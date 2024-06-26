@@ -9,6 +9,8 @@ This is like a custom LLM for particular use cases in which data is provided by 
 <I>**I used this basic LLM model of LangChain because I used it earlier sometime, of course, it does not have capabilities like the recent LLMs like Gemini, ChatGPT, and Llama. Using my approach for creating personal agents can produce excellent results with these new models. I just focussed best approach on how to make the best results rather than choosing the best LLM model, as the problem statement states to solve the issue with the best approach, not the best model.**</I>
 
 ## Raw Data Organization
+![Structure](https://github.com/Sar-thak-3/Personal-Agent/assets/100359818/7f3d2070-e5f1-4ba3-96aa-a73c2f02800d)
+
 
 I have designed this project to handle a variety of web URLs and README files, extracting relevant data to be organized for effective management and processing by LLMs (Language Models). Here's how it works:
 1. **URL and README Parsing**: The system retrieves content from provided web URLs and README files.
