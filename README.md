@@ -88,6 +88,28 @@ CustomGPT by OpenAI works similarly by providing the entire data at once to the 
 - The scaling approach for this method is using strong LLMs with huge tokens and more tends towards the conversational history.
 ```
 
+# Why I Didn't Use LangChains and RAGS
+![fUTURE](https://github.com/Sar-thak-3/Personal-Agent/assets/100359818/447d8750-6e19-4bf8-909f-003eff00b270)
+
+
+While LangChains and RAGS are popular methods for deploying LLMs, I chose not to use them for several reasons:
+
+## Limitations of LangChains and RAGS
+
+- **Limited Data Availability**: These methods often have restrictions on the amount of data they can access. Although they provide highly relevant data, the quantity may not always be sufficient.
+  
+- **Inadequate Context Retrieval**: For example, when pulling data from a lecture, they might only extract a few lines when the entire paragraph is needed to fully answer a query.
+
+## My Approach
+
+- **Context Similarity**: To address these limitations, I opted for a context similarity approach, which better matches the context and answers. While this might not be the most perfect method, I believe that blending elements of both RAG and context similarity will offer the most relevant context and answers to queries.
+
+## Future Directions
+
+- **Blending RAG and Context Similarity**: My future goal is to develop a system that combines the strengths of both RAG and context similarity, providing more comprehensive and accurate responses.
+
+I would love to talk more about this approach with your team on a call. Thank you for considering my perspective and approach.
+
 ### Conclusion
 Both approaches have distinct advantages and drawbacks based on the data's nature and the query agent's requirements. Future improvements could explore hybrid approaches or enhancements in model capabilities to handle larger datasets effectively.
 
